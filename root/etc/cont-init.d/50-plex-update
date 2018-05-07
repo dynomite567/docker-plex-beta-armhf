@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+# Find updates
+echo "Now checking for updates, please wait."
+apt-get update && apt-get upgrade plexmediaserver-installer
+echo "Update complete, starting up server"
+exit 0
+fi
