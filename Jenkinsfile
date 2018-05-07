@@ -7,10 +7,10 @@ node {
         def commit_id = readFile('.git/commit-id').trim()
         println commit_id
     
-        stage "build"
+        stage "Build image"
         def app = docker.build "dynomitecentral/plex-beta-armhf"
     
-        stage "publish"
+        stage "Publish image"
         app.push 'weekly'
         app.push "${env.BUILD_NUMBER}"
     }
