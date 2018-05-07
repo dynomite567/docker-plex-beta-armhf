@@ -11,6 +11,7 @@ ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config"
 
 RUN \
+ echo "**** update OS ****" && \
  apt-get update && \
  apt-get install -y \
 	apt-transport-https \
@@ -19,6 +20,7 @@ RUN \
 	udev \
 	unrar \
 	wget && \
+ echo "**** add repo ****" && \
  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 44C25C58 && \
  echo "deb https://pmsb.dynodev.ga/repo/ jessie main" >> /etc/apt/sources.list.d/plex.list && \
  echo "**** install plexmediaserver ****" && \
@@ -27,11 +29,13 @@ RUN \
 	plexmediaserver-installer && \
  echo "**** cleanup ****" && \
  apt-get clean && \
- rm -rf \
-	/tmp/* \
-	/var/lib/apt/lists/* \
-	/var/tmp/*
-
+ rm -rf /tmp/* && \
+ echo "tmp cleared" && \
+ rm -rf /var/lib/apt/lists/* && \
+ echo "apt lists cleared" && \
+ rm -rf /var/tmp/* && \
+ echo "build complete"
+ 
 # copy local files
 COPY root/ /
 
