@@ -1,11 +1,7 @@
 # dynomitecentral/plex-beta-armhf
-[![](https://images.microbadger.com/badges/version/dynomitecentral/plex-beta-armhf.svg)](https://microbadger.com/images/dynomitecentral/plex-beta-armhf "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/dynomitecentral/plex-beta-armhf.svg)](https://microbadger.com/images/dynomitecentral/plex-beta-armhf "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/dynomitecentral/plex-beta-armhf.svg)]() [![Docker Stars](https://img.shields.io/docker/stars/dynomitecentral/plex-beta-armhf.svg)]() [![Docker Build Status](https://img.shields.io/docker/build/dynomitecentral/plex-beta-armhf.svg)]()
+[![](https://images.microbadger.com/badges/version/dynomitecentral/plex-beta-armhf.svg)](https://microbadger.com/images/dynomitecentral/plex-beta-armhf "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/dynomitecentral/plex-beta-armhf.svg)](https://microbadger.com/images/dynomitecentral/plex-beta-armhf "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/dynomitecentral/plex-beta-armhf.svg)]() [![Docker Stars](https://img.shields.io/docker/stars/dynomitecentral/plex-beta-armhf.svg)]()
 
 **Forked from lsioarmhf/plex**
-
-[Plex](https://plex.tv/) organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone Plex Media Server.
-
-![plex](http://the-gadgeteer.com/wp-content/uploads/2015/10/plex-logo-e1446990678679.png)
 
 ## Usage
 
@@ -18,7 +14,7 @@ docker create \
 	-v <path/to/tvseries>:/data/tvshows \
 	-v </path/to/movies>:/data/movies \
 	-v </path for transcoding>:/transcode \
-	dynomitecentral/plex-beta
+	dynomitecentral/plex-beta-armhf
 ```
 
 ## Parameters
@@ -53,6 +49,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 Webui can be found at `<your-ip>:32400/web`
 
+To update to the latest version, simply restart the docker container with `docker restart plex`
 
 ## Info
 
