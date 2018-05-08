@@ -11,7 +11,7 @@ node {
         def app = docker.build "dynomitecentral/plex-beta-armhf"
     
         stage "Publish image"
-        app.push 'latest'
         app.push "${env.BUILD_NUMBER}"
+        app.push 'latest'
     }
 }
