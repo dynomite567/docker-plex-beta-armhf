@@ -1,4 +1,4 @@
-node("armhf") {
+node("dockerarmhf") {
     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
     
         git url: "https://github.com/dynomite567/docker-plex-beta-armhf.git", credentialsId: 'GitHub'
